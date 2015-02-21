@@ -5,7 +5,7 @@ Vagrant box with Graylog2 server installed.
 
     vagrant up
 	vagrant ssh
-	cd ~/
+	cd ~/provisioning
 	ansible-playbook -i inventory playbook.yml
 
 after waiting a long time you can access graylog2 web interface under:
