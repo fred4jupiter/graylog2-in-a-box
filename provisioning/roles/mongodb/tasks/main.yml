@@ -1,0 +1,24 @@
+---
+- name: Install MongoDB Ubuntu Sources Key
+  sudo: yes
+  apt_key: id=7F0CEB10 state=present url=http://docs.mongodb.org/10gen-gpg-key.asc
+
+- name: Add MongoDB repository into APT
+  sudo: yes
+  apt_repository: repo='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' state=present
+
+- name: Update APT cache
+  apt: update_cache=yes
+  sudo: yes
+
+- name: Install prerequisite Ubuntu packages
+  sudo: yes
+  apt: pkg={{item}} state=present
+  with_items:
+    - mongodb-org
+
+- name: mongod
+  sudo: yes
+  service: name={{item}} state=restarted
+  with_items:
+  - mongod

@@ -1,0 +1,6 @@
+---
+graylog2_server_version: "graylog2-server-0.20.2"
+graylog2_server_url: "https://github.com/Graylog2/graylog2-server/releases/download/0.20.2/graylog2-server-0.20.2.tgz"
+elasticsearch_cluster_name: "graylog2"
+graylog2_web_version: "graylog2-web-interface-0.20.2"
+graylog2_web_url: "https://github.com/Graylog2/graylog2-web-interface/releases/download/0.20.2/graylog2-web-interface-0.20.2.tgz"
