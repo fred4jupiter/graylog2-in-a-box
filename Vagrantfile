@@ -10,11 +10,14 @@ Vagrant.configure(2) do |config|
   end  
   # to prevent tty errors
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-  config.vm.provision "shell", inline: "sudo apt-add-repository ppa:ansible/ansible -y"  
-  config.vm.provision "shell", inline: "sudo apt-get update -y"  
-  config.vm.provision "shell", inline: "sudo apt-get install -y software-properties-common ansible git"
-  config.vm.provision "shell", inline: "cp -r /vagrant/provisioning /home/vagrant/provisioning"
-  config.vm.provision "shell", inline: "sudo chown -R vagrant provisioning/"  
-  config.vm.provision "shell", inline: "chmod -x /home/vagrant/provisioning/inventory"
-  config.vm.provision "shell", inline: "chmod -x /home/vagrant/provisioning/playbook.yml"  
+
+  # use the part for using ansible inside the box (e.g. running ansible from guest when the host does not support ansible (e.g. Windows))
+  # config.vm.provision "shell", path: "install_in_box.sh"  
+  # config.vm.provision "shell", inline: "cd /home/vagrant/provisioning && ansible-playbook -i inventory playbook.yml"
+
+  # use the part for using ansible outside the box (running ansible from host)
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "provisioning/playbook.yml"
+  end
+
 end

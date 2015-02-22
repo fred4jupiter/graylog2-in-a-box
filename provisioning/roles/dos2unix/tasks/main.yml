@@ -1,0 +1,6 @@
+---
+- name: installs dos2unix
+  sudo: yes
+  apt: pkg={{item}} state=installed
+  with_items:
+    - dos2unix

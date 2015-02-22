@@ -1,0 +1,6 @@
+---
+
+- hosts: all
+  roles:
+    - dos2unix
+    

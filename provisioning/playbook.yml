@@ -3,7 +3,8 @@
 - hosts: all
   sudo: yes
   roles:
-	- java-open-jdk
-	- elasticserver
-	- mongodb
-	- graylog2
+    - java-open-jdk
+    - elasticserver
+    - mongodb
+    - graylog2
+    
