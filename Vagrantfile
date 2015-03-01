@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
 
   # use the part for using ansible inside the box (e.g. running ansible from guest when the host does not support ansible (e.g. Windows))
   # config.vm.provision "shell", path: "install_in_box.sh"  
-  # config.vm.provision "shell", inline: "cd /home/vagrant/provisioning && ansible-playbook -i inventory playbook.yml"
+  # config.vm.provision "shell", inline: "cd /home/vagrant && git clone https://github.com/fred4jupiter/graylog2-in-a-box.git"
 
   # use the part for using ansible outside the box (running ansible from host)
   config.vm.provision "ansible" do |ansible|

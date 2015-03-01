@@ -4,9 +4,9 @@ Vagrant box with Graylog2 server installed. The vagrant box uses a virtual priva
 
 **Usage for provisioning the vagrant box itself (e.g. when you start the vagrant box from a Windows OS):**
 
-    vagrant up
+	vagrant up --provision-with inbox
 	vagrant ssh
-	cd ~/provisioning
+	cd ~/graylog2-in-a-box/provisioning
 	ansible-playbook -i inventory playbook.yml
 
 after waiting a long time you can access graylog2 web interface under:
@@ -15,7 +15,7 @@ after waiting a long time you can access graylog2 web interface under:
 
 **Usage for provisioning the vagrant box from a Linux/Unix system:**
 
-    vagrant up
+    vagrant up --provision-with outside
 	cd provisioning
 	ansible-playbook -i inventory playbook.yml
 
