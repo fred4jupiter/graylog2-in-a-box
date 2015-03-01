@@ -15,7 +15,7 @@
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DESC="Graylog2 Server"
 NAME=graylog2-server
-JAR_FILE=/opt/graylog2/server/graylog2-server.jar
+JAR_FILE=/opt/graylog2/server/graylog.jar
 DAEMON=/usr/bin/java
 PIDFILE=/var/run/graylog2/$NAME.pid
 DAEMON_ARGS="-jar $JAR_FILE -p $PIDFILE"

@@ -60,12 +60,12 @@
 
 - name: Update Graylog2 configuration
   sudo: yes
-  template: src=graylog2.conf.j2 dest=/etc/graylog2.conf owner=graylog2 group=graylog2 mode=0644
+  template: src=graylog2.conf.j2 dest=/opt/graylog2/{{graylog2_server_version}}/graylog.conf owner=graylog2 group=graylog2 mode=0644
 
 - name: Update Graylog2 Web configuration
   sudo: yes
   sudo_user: graylog2
-  template: src=graylog2-web-interface.conf.j2 dest=/opt/graylog2/{{graylog2_web_version}}/conf/graylog2-web-interface.conf owner=graylog2 group=graylog2 mode=0644
+  template: src=graylog2-web-interface.conf.j2 dest=/opt/graylog2/{{graylog2_web_version}}/conf/graylog-web-interface.conf owner=graylog2 group=graylog2 mode=0644
 
 - name: Install Graylog2 Server init.d script
   sudo: yes
