@@ -60,7 +60,7 @@
 
 - name: Update Graylog2 configuration
   sudo: yes
-  template: src=graylog2.conf.j2 dest=/opt/graylog2/{{graylog2_server_version}}/graylog.conf owner=graylog2 group=graylog2 mode=0644
+  template: src=graylog2.conf.j2 dest=/etc/graylog/server/server.conf owner=graylog2 group=graylog2 mode=0644
 
 - name: Update Graylog2 Web configuration
   sudo: yes

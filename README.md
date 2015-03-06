@@ -7,7 +7,6 @@ Vagrant box with Graylog2 server installed. The vagrant box uses a virtual priva
 You have to uncomment the lines for the shell provisioning to install ansible inside the box.
 
 	# config.vm.provision "shell", path: "install_in_box.sh" 
-	# config.vm.provision "shell", inline: "cd /home/vagrant && git clone https://github.com/fred4jupiter/graylog2-in-a-box.git"
 
 After that comment out the ansible provisioner.
 
@@ -18,16 +17,15 @@ After that comment out the ansible provisioner.
 Then run the follwing commands:
 
 	vagrant up
-	vagrant ssh
+	vagrant ssh	
+	cd /home/vagrant && git clone https://github.com/fred4jupiter/graylog2-in-a-box.git
 	cd ~/graylog2-in-a-box/provisioning
 	ansible-playbook -i inventory playbook.yml
 
 
 **Usage for provisioning the vagrant box from a Linux/Unix system:**
 
-    vagrant up
-	cd provisioning
-	ansible-playbook -i inventory playbook.yml
+    vagrant up	
 
 **Notes:**
 
@@ -41,5 +39,5 @@ After waiting a long time for provisioning you can access graylog2 web interface
 
 [http://192.168.56.100:9000/](http://192.168.56.100:9000/ "Graylog2 Web Console")
 
-Username: admin
-Password: yourpassword
+	Username: admin
+	Password: yourpassword
