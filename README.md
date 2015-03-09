@@ -25,13 +25,7 @@ Then run the follwing commands:
 
 **Usage for provisioning the vagrant box from a Linux/Unix system:**
 
-    vagrant up	
-
-**Notes:**
-
-Before running the ansible playbook you can test which tasks would be executed by running:
-
-	ansible-playbook --syntax-check --list-tasks -i inventory playbook.yml
+    vagrant up
 
 ##Graylog2 Web Interface##
 
@@ -41,3 +35,13 @@ After waiting a long time for provisioning you can access graylog2 web interface
 
 	Username: admin
 	Password: yourpassword
+
+## Helpfull commands ##
+
+Testing if Elasticsearch is running:
+
+	curl -XGET 'http://192.168.56.100:9200/_cluster/health?pretty=true'
+
+Before running the ansible playbook you can test which tasks would be executed by running:
+
+	ansible-playbook --syntax-check --list-tasks -i inventory playbook.yml
