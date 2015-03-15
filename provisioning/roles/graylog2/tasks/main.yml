@@ -43,13 +43,13 @@
 
 - name: Create Graylog2 directory symlinks
   sudo: yes
-  sudo_user: graylog2
-  command: chdir=/opt/graylog2 ln -s /opt/graylog2/{{graylog2_server_version}} /opt/graylog2/server
+  sudo_user: graylog2  
+  file: src=/opt/graylog2/{{graylog2_server_version}} dest=/opt/graylog2/server state=link
 
 - name: Create Graylog2 Web directory symlinks
   sudo: yes
   sudo_user: graylog2
-  command: chdir=/opt/graylog2 ln -s /opt/graylog2/{{graylog2_web_version}} /opt/graylog2/web
+  file: src=/opt/graylog2/{{graylog2_web_version}} dest=/opt/graylog2/web state=link
 
 - name: Poke both mongod and elasticsearch
   sudo: yes
@@ -57,6 +57,9 @@
   with_items:
   - elasticsearch
   - mongod
+
+- name: Assures /etc/graylog/server dir exists
+  file: path=/etc/graylog/server state=directory
 
 - name: Update Graylog2 configuration
   sudo: yes
