@@ -200,24 +200,24 @@ cluster.name: {{elasticsearch_cluster_name}}
 
 # Set the bind address specifically (IPv4 or IPv6):
 #
-network.bind_host: 192.168.56.100
+network.bind_host: 0.0.0.0
 
 # Set the address other nodes will use to communicate with this node. If not
 # set, it is automatically derived. It must point to an actual IP address.
 #
-network.publish_host: 192.168.56.100
+# network.publish_host: 192.168.56.101
 
 # Set both 'bind_host' and 'publish_host':
 #
-network.host: 192.168.56.100
+# network.host: 192.168.56.101
 
 # Set a custom port for the node to node communication (9300 by default):
 #
-#transport.tcp.port: 9300
+# transport.tcp.port: 9300
 
 # Enable compression for all communication between nodes (disabled by default):
 #
-#transport.tcp.compress: true
+# transport.tcp.compress: true
 
 # Set a custom port to listen for HTTP traffic:
 #
