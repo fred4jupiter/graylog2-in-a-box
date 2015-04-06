@@ -51,7 +51,7 @@
   sudo_user: graylog2
   file: src=/opt/graylog2/{{graylog2_web_version}} dest=/opt/graylog2/web state=link
 
-- name: Poke both mongod and elasticsearch
+- name: Restart mongod and elasticsearch
   sudo: yes
   service: name={{item}} state=restarted
   with_items:
