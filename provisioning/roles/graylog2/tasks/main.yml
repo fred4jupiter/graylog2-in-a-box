@@ -78,7 +78,7 @@
   sudo: yes
   copy: src=init.d/graylog2-web  dest=/etc/init.d/graylog2-web owner=root group=root mode=0755
 
-- name: ensure graylog-server and graylog-web is running
+- name: Ensure graylog-server and graylog-web is running
   sudo: yes
   service: name={{item}} state=started enabled=yes
   with_items:
