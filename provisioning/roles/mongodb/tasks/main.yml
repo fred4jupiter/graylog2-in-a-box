@@ -11,13 +11,13 @@
   apt: update_cache=yes
   sudo: yes
 
-- name: Install prerequisite Ubuntu packages
+- name: Install Mongo DB
   sudo: yes
   apt: pkg={{item}} state=present
   with_items:
     - mongodb-org
 
-- name: mongod
+- name: Restart mongod
   sudo: yes
   service: name={{item}} state=restarted
   with_items:
