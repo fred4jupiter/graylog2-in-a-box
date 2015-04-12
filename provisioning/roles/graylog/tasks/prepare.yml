@@ -31,7 +31,7 @@
 #  apt: name=oracle-java8-installer state=present force=yes
 
 - name: Download Graylog repository package
-  get_url: url={{ graylog_packages_url }} dest=/tmp/graylog_repository.deb
+  get_url: url="https://packages.graylog2.org/repo/packages/graylog-1.0-repository-ubuntu14.04_latest.deb" dest=/tmp/graylog_repository.deb
 
 - apt: name=apt-transport-https state=installed
 
