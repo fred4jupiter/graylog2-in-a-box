@@ -32,11 +32,11 @@ Vagrant.configure(2) do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # use the part for using ansible inside the box (e.g. running ansible from guest when the host does not support ansible (e.g. Windows))
-  # config.vm.provision "shell", path: "install_in_box.sh"    
+  config.vm.provision "shell", path: "install_in_box.sh"    
 
   # use the part for using ansible outside the box (running ansible from host)
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "provisioning/playbook.yml"
-  end
+  #config.vm.provision "ansible" do |ansible|
+  #  ansible.playbook = "provisioning/playbook.yml"
+  # end
 
 end

@@ -5,5 +5,5 @@
   roles:
     - elasticserver
     - mongodb
-    - graylog2
+    - graylog
     
