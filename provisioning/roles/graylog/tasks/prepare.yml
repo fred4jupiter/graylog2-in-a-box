@@ -18,11 +18,17 @@
   apt_key: keyserver={{ java_repo_keyserver }} id={{ java_repo_key }}
   when: ansible_distribution == "Debian"
 
-- name: Accept Oracle license prior JDK installation
-  shell: echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections; echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections creates=/usr/lib/jvm/java-8-oracle
+- name: Install Open JDK
+  sudo: yes
+  apt: pkg={{item}} state=present
+  with_items:
+  - openjdk-7-jre
+    
+#- name: Accept Oracle license prior JDK installation
+#  shell: echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections; echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections creates=/usr/lib/jvm/java-8-oracle
 
-- name: Install Java 8
-  apt: name=oracle-java8-installer state=present force=yes
+#- name: Install Java 8
+#  apt: name=oracle-java8-installer state=present force=yes
 
 - name: Download Graylog repository package
   get_url: url={{ graylog_packages_url }} dest=/tmp/graylog_repository.deb
