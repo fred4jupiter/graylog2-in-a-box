@@ -24,7 +24,7 @@ After waiting a long time for provisioning you can access graylog2 web interface
 [http://192.168.56.101:9000/](http://192.168.56.101:9000/ "Graylog2 Web Console")
 
 	Username: admin
-	Password: yourpassword
+	Password: admin
 
 ## Helpfull commands ##
 
