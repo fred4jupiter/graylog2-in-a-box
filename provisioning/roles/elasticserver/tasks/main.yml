@@ -22,7 +22,7 @@
   sudo: yes
   template: src=elasticsearch.yml.j2 dest=/etc/elasticsearch/elasticsearch.yml owner=root group=root mode=0644
 
-- name: Start elasticsearch
+- name: Restart elasticsearch
   sudo: yes
   service: name={{item}} state=restarted
   with_items:
