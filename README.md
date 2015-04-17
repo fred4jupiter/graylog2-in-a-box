@@ -1,3 +1,4 @@
+
 # graylog2-in-a-box #
 
 Vagrant box with Graylog2 server installed. The vagrant box uses a virtual private host adapter with the IP address 192.168.56.101.
@@ -14,7 +15,7 @@ Run the follwing commands:
 	vagrant ssh windows	
 	cd /home/vagrant && git clone https://github.com/fred4jupiter/graylog2-in-a-box.git
 	cd ~/graylog2-in-a-box/provisioning
-	ansible-playbook -i inventory playbook.yml
+	sudo ansible-playbook -i inventory playbook.yml
 
 ##Graylog2 Web Interface##
 
