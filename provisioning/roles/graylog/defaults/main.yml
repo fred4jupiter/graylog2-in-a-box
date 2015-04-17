@@ -26,7 +26,7 @@ rest_enable_gzip: 'true'
 # Search
 allow_leading_wildcard_searches: 'false'
 allow_highlighting: 'false'
-graylog_elasticsearch_config_file: /etc/graylog/server/elasticsearch.yml
+graylog_elasticsearch_config_file: /etc/elasticsearch/elasticsearch.yml
 graylog_elasticsearch_max_docs_per_index: 20000000
 graylog_elasticsearch_max_number_of_indices: 20
 graylog_elasticsearch_retention_strategy: delete

@@ -17,6 +17,10 @@
   with_items:
   - openjdk-7-jre
   - elasticsearch
+  
+- name: Update Elasticsearch configuration
+  sudo: yes
+  template: src=elasticsearch.yml.j2 dest=/etc/elasticsearch/elasticsearch.yml owner=root group=root mode=0644
 
 - name: Start elasticsearch
   sudo: yes
