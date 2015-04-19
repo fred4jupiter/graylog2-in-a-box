@@ -3,7 +3,6 @@
 - hosts: all
   sudo: yes
   roles:
-#    - elasticserver
     - elasticsearch
     - mongodb
     - graylog
