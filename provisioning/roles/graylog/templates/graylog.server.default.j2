@@ -1,4 +1,4 @@
 JAVA=/usr/bin/java
-GRAYLOG_SERVER_JAVA_OPTS="{{server_java_opts}}"
-GRAYLOG_SERVER_ARGS="{{server_args}}"
-GRAYLOG_COMMAND_WRAPPER="{{server_wrapper}}"
+GRAYLOG_SERVER_JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Xms1g -Xmx1g -XX:NewRatio=1 -XX:PermSize=128m -XX:MaxPermSize=256m -server -XX:+ResizeTLAB -XX:+UseConcMarkSweepGC -XX:+CMSConcurrentMTEnabled -XX:+CMSClassUnloadingEnabled -XX:+UseParNewGC -XX:-OmitStackTraceInFastThrow"
+GRAYLOG_SERVER_ARGS=""
+GRAYLOG_COMMAND_WRAPPER=""
