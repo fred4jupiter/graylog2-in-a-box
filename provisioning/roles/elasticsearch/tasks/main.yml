@@ -1,0 +1,21 @@
+---
+- name: Install ElasticSearch Ubuntu Source Key
+  sudo: yes
+  apt_key: state=present url=http://packages.elasticsearch.org/GPG-KEY-elasticsearch
+
+- name: Add ElasticSearch repository into APT
+  sudo: yes
+  apt_repository: repo='deb http://packages.elasticsearch.org/elasticsearch/1.4/debian stable main' state=present
+
+- name: Install Open JDK
+  sudo: yes
+  apt: name=openjdk-7-jre state=present update_cache=yes
+
+- name: Install ElasticSearch
+  sudo: yes
+  apt: name=elasticsearch state=present update_cache=yes
+
+- name: Configure ElasticSearch
+  template: src=elasticsearch.yml.j2 dest=/etc/elasticsearch/elasticsearch.yml owner=root group=root mode=0644
+  notify: restart elasticsearch
+
