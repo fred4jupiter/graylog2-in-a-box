@@ -7,15 +7,11 @@ Vagrant box with Graylog2 server installed. The vagrant box uses a virtual priva
 
     vagrant up linux
 
-**Usage on non (*)nix hosts (for provisioning the vagrant box itself (e.g. when you start the vagrant box from a Windows OS)):**
+**Usage for provisioning the vagrant box from a Windows system:**
 
 Run the follwing commands:
 
 	vagrant up windows
-	vagrant ssh windows	
-	cd /home/vagrant && git clone https://github.com/fred4jupiter/graylog2-in-a-box.git
-	cd ~/graylog2-in-a-box/provisioning
-	sudo ansible-playbook -i inventory playbook.yml
 
 ##Graylog2 Web Interface##
 
