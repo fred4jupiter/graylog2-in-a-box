@@ -3,6 +3,7 @@
 - hosts: all
   sudo: yes
   roles:
+    - timezone
     - elasticsearch
     - mongodb
     - graylog
