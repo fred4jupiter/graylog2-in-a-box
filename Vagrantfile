@@ -3,7 +3,10 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
+  config.vm.box_version = "14.04"
+  
   config.vm.network "private_network", ip: "192.168.56.101"
+  
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
 	vb.customize ["modifyvm", :id, "--cpus", "4"]
