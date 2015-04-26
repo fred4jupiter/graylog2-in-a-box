@@ -40,7 +40,8 @@ Vagrant.configure(2) do |config|
   config.vm.define "windows" do |windows|
     # to prevent tty errors
     windows.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-
     windows.vm.provision "shell", path: "install_in_box.sh"
+    windows.vm.provision "file", source: "provisioning", destination: "/home/vagrant/provisioning"
+    windows.vm.provision "shell", path: "run_ansible.sh"
   end
 end
