@@ -15,13 +15,9 @@
   sudo: yes
   apt: name=elasticsearch state=present update_cache=yes
 
-- name: Copy init script 
+- name: Ensure running elasticsearch on startup
   sudo: yes
-  template: src=elasticsearch.conf.j2 dest=/etc/init/elasticsearch.conf owner=elasticsearch group=elasticsearch
-
-- name: Disable init.d script in favor of using the upstart init script
-  sudo: yes
-  command: update-rc.d -f elasticsearch remove
+  command: update-rc.d elasticsearch defaults 95 10
 
 - name: Configure ElasticSearch
   template: src=elasticsearch.yml.j2 dest=/etc/elasticsearch/elasticsearch.yml owner=root group=root mode=0644
