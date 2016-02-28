@@ -22,6 +22,10 @@ After waiting a long time for provisioning you can access graylog2 web interface
 	Username: admin
 	Password: admin
 
+## Demo application for sending log messages ##
+
+You can use the [log4j2-demo-app](https://github.com/fred4jupiter/log4j2-demo-app) for sending log messages to the graylog server.
+
 ## Helpfull commands ##
 
 Testing if Elasticsearch is running:
