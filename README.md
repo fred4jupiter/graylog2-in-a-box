@@ -1,5 +1,6 @@
 
-# graylog2-in-a-box #
+# graylog2-in-a-box
+## Usage
 
 Vagrant box with Graylog2 server installed. The vagrant box uses a virtual private host adapter with the IP address 192.168.56.101.
 
@@ -13,7 +14,7 @@ Run the follwing commands:
 
 	vagrant up windows
 
-##Graylog2 Web Interface##
+## Graylog2 Web Interface
 
 After waiting a long time for provisioning you can access graylog2 web interface under:
 
@@ -22,11 +23,11 @@ After waiting a long time for provisioning you can access graylog2 web interface
 	Username: admin
 	Password: admin
 
-## Demo application for sending log messages ##
+## Demo application for sending log messages
 
 You can use the [log4j2-demo-app](https://github.com/fred4jupiter/log4j2-demo-app) for sending log messages to the graylog server.
 
-## Helpfull commands ##
+## Helpfull commands
 
 Testing if Elasticsearch is running:
 
