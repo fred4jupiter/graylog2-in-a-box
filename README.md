@@ -4,15 +4,17 @@
 
 Vagrant box with Graylog2 server installed. The vagrant box uses a virtual private host adapter with the IP address 192.168.56.101.
 
-**Usage for provisioning the vagrant box from a Linux/Unix system:**
+### Usage for provisioning the vagrant box from a Linux/Unix system:
 
     vagrant up linux
+    vagrant ssh linux
 
-**Usage for provisioning the vagrant box from a Windows system:**
+### Usage for provisioning the vagrant box from a Windows system:
 
 Run the follwing commands:
 
 	vagrant up windows
+    vagrant ssh windows
 
 ## Graylog2 Web Interface
 
